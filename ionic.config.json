@@ -1,0 +1,7 @@
+{
+  "name": "appCuatro",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
