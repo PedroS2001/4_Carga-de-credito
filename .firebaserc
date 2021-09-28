@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tpspps-8056a": {
+      "hosting": {
+        "app": [
+          "tpspps-8056a"
+        ]
+      }
+    }
+  }
+}

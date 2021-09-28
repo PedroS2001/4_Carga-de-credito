@@ -1,0 +1,83 @@
+<ion-header >
+  <ion-toolbar style="--background: #920547; color: white;">
+    <ion-title align="center" >LECTOR QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid [hidden]="!scanActive" style="background-color: #c01263; height: 100%; display: flex; flex-flow: column;">
+    <video #video  width="100%" ></video>
+    <canvas #canvas hidden></canvas>
+      <ion-button (click)="stopScan()" color="danger" >
+         Cancelar
+      </ion-button>   
+  </ion-grid>
+
+  <ion-grid [hidden]="scanActive" style="background-color: #c01263; height: 100%; display: flex; flex-flow: column;">
+
+    <ion-row  style="flex-grow: 2;" class="card">
+      <ion-col size="12">
+        <h2>Credito acumulado</h2>
+        <h1>{{acumulado}}</h1>
+      </ion-col>
+    </ion-row>
+
+        
+ 
+
+    <ion-row style="flex-grow: 1.5;" >
+      <ion-col size="12">
+        <button style="width: 100%; height: 100%; background-color: rgb(41, 212, 7);" class="card" (click)="startScan()">
+          <h2>Escanear QR</h2>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row style="flex-grow: 0.5; ">
+      <ion-col size="12">
+        <ion-button (click)="btnBorrarCredito()" style="width: 100%; height: 100%;" type="submit" color="danger" expand="fill" >
+          Borrar todo el credito
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+  <!-- <ion-button (click)="reset()" color="warning" >
+    Reset
+  </ion-button>   -->
+<!--   
+  <ion-row style="flex-grow: 0.5;">
+    <ion-col size="12">
+      <ion-button style="width: 100%; height: 100%;" type="submit" color="warning" expand="fill" (click)="consolelog()" >
+        CONSOLELOG
+      </ion-button>
+    </ion-col>
+  </ion-row> -->
+
+  <ion-row style="flex-grow: 0.5;">
+    <ion-col size="12">
+      <ion-button style="width: 100%; height: 100%;" type="submit" color="warning" expand="fill" (click)="signOut()" >
+        Cerrar Sesion
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+
+  <!-- <ion-button (click)="stopScan()" color="danger" >
+    Stop Scan
+  </ion-button>   -->
+
+
+<!-- 
+  <ion-card *ngIf="scanResult">
+    <ion-card-header>
+      <ion-card-title>QR Code</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{scanResult}}
+    </ion-card-content>
+  </ion-card> -->
+
+</ion-grid> 
+
+
+</ion-content>

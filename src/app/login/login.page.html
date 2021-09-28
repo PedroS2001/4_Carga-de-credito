@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar color="dark"  >
+    <ion-title align="center"> <strong>INGRESO DE USUARIO</strong> </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form class="form" [formGroup]="userForm" (ngSubmit)="signIn(userForm.value)">
+    <ion-item lines="full">
+      <ion-label position="fixed">Email</ion-label>
+      <ion-input type="text" required formControlName="email" [(ngModel)]="correo" name="correo" ></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="fixed">Contraseña</ion-label>
+      <ion-input type="password" required formControlName="password" [(ngModel)]="clave" name="clave" ></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="success" shape="round" expand="full" strong [disabled]="!userForm.valid">Ingresar</ion-button>
+      </ion-col>
+        <ion-col>
+        <ion-button (click)="limpiar()" color="warning"  shape="round" expand="full" strong>Limpiar</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-label class="ion-text-center" color="danger">{{errorMsg}}</ion-label>
+
+    <ion-row>
+      <ion-col>
+        <ion-button color="dark" (click)="mostrarIngresoRapido()" shape="round" expand="full" strong>Ingreso Rápido</ion-button>
+      </ion-col>
+    </ion-row>
+
+      <ion-col>
+        <ion-button color="dark" (click)="isAdmin()" shape="round" strong *ngIf="ingresoRapido">
+          <ion-icon name="person"></ion-icon>
+          Admin
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="dark" (click)="isUsuario()" shape="round" strong *ngIf="ingresoRapido">
+          <ion-icon name="person"></ion-icon>
+          Usuario
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="dark" (click)="isInvitado()" shape="round" strong *ngIf="ingresoRapido">
+          <ion-icon name="person"></ion-icon>
+          Invitado
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="dark" (click)="isAnonimo()"  shape="round" strong *ngIf="ingresoRapido">
+          <ion-icon name="person"></ion-icon>
+          Anonimo
+        </ion-button>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="dark" (click)="isTester()" shape="round" strong *ngIf="ingresoRapido">
+          <ion-icon name="person"></ion-icon>
+          Tester
+        </ion-button>
+      </ion-col>
+  </form>
+</ion-content>
