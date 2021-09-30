@@ -2,5 +2,12 @@
 	"appId": "app.cuatro",
 	"appName": "Carga de credito",
 	"webDir": "www",
-	"bundledWebRuntime": false
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 1000,
+			"launchAutoHide": false,
+			"backgroundColor": "#46B4EB"
+		}
+	}
 }
